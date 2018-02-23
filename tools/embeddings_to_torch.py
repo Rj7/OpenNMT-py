@@ -36,7 +36,8 @@ def get_embeddings(file):
         l_split = l.decode('utf8').strip().split()
         if len(l_split) == 2:
             continue
-        embs[l_split[0]] = [float(em) for em in l_split[1:]]
+#        embs[l_split[0]] = [float(em) for em in l_split[1:]]
+        embs[" ".join(l_split[:-300])] = [float(em) for em in l_split[-300:]]
     print("Got {} embeddings from {}".format(len(embs), file))
 
     return embs
