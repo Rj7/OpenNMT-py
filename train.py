@@ -374,6 +374,7 @@ def build_optim(model, checkpoint):
 
 
 def main():
+    print (opt)
     # Load checkpoint if we resume from a previous training.
     if opt.train_from:
         print('Loading checkpoint from %s' % opt.train_from)
