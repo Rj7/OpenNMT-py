@@ -54,7 +54,7 @@ class TransformerEncoderLayer(nn.Module):
     """
 
     def __init__(self, size, dropout,
-                 head_count=8, hidden_size=2048):
+                 head_count=10, hidden_size=2048):
         super(TransformerEncoderLayer, self).__init__()
 
         self.self_attn = onmt.modules.MultiHeadedAttention(
@@ -148,7 +148,7 @@ class TransformerDecoderLayer(nn.Module):
       hidden_size(int): the second-layer of the PositionwiseFeedForward.
     """
     def __init__(self, size, dropout,
-                 head_count=8, hidden_size=2048):
+                 head_count=10, hidden_size=2048):
         super(TransformerDecoderLayer, self).__init__()
         self.self_attn = onmt.modules.MultiHeadedAttention(
                 head_count, size, dropout=dropout)
